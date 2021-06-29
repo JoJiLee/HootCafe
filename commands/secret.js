@@ -11,7 +11,7 @@ module.exports = {
 
             const secret = new Discord.MessageEmbed()
             .setColor('RANDOM')
-            .setThumbnail('https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2Fblush.png?v=1613695358221')
+            .setThumbnail('https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fblush.png?v=1624959786796')
             .setTitle('Secret Menu')
             .addField('`Bodily Fluids`', 'But whose is it?')
             .addField('`Torchic Egg on Toast`', 'Is this even legal?')
