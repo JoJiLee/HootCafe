@@ -9,11 +9,11 @@ module.exports = {
         
         const front = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setImage("https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2Ffront.png?v=1613459542967")
+        .setImage("https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Ffront.png?v=1624959811176")
       
         const drinks = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setThumbnail('https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2Fcoffee%20can.png?v=1613452167786')
+        .setThumbnail('https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fcoffee%20can.png?v=1624959793374')
         .setTitle('Drinks')
         .addField('`Banana Milk`', 'Banana Flavored Milk')
         .addField('`Coffee`', ' Roasted Coffee Beans')
@@ -28,7 +28,7 @@ module.exports = {
 
         const food = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setThumbnail("https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2Fklipartz.com.png?v=1613460061919")
+        .setThumbnail("https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fmusubi.png?v=1624959832250")
         .setTitle('Food')
         .addField('`Bento Box`', 'Single-portion take-out or home-packed meal of Japanese origin')
         .addField('`Pancakes`', ' Flat Cake')
@@ -41,7 +41,7 @@ module.exports = {
 
         const dessert = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setThumbnail('https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2Fe.png?v=1613452030343')
+        .setThumbnail('https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fe.png?v=1624959809712')
         .setTitle('Dessert')
         .addField('`Muffin`', 'Quick bread made of batter containing egg and baked in a pan having cuplike molds')
         .addField('`Raspberry Pudding`', 'A raspberry flavored, custard-like dessert made of milk, sugar, and a thickening agent such as egg yolks or corn starch')
@@ -54,7 +54,7 @@ module.exports = {
         
         const back = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setImage("https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2Fback.png?v=1613459542327")
+        .setImage("https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fback.png?v=1624959778144")
 
         const pages = [
                 front,

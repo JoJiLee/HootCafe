@@ -1,10 +1,7 @@
-//discordbot
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const fs = require("fs");
 const config = require("./config.json");
-const cheerio = require("cheerio");
-const request = require("request");
 
 bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
@@ -51,32 +48,32 @@ bot.on("message", async message => {
 });
 
 const gifs = { 
-  "order coffee": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FCoffee%20cropped.gif?v=1613444146008", 
-  "order latte": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FLatte.gif?v=1613444145762",
-  "order muffin": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FMuffin.gif?v=1613444146225",
-  "order strawberry cake roll": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FStrawberry%20cake%20roll.gif?v=1613444145762",
-  "order strawberry mousse slice": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FStrawberry%20mousse%20slice.gif?v=1613444145801",
-  "order shio ramen": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FShio%20ramen.gif?v=1613444145874",
-  "order rilakkuma pancake": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FRilakkuma%20pancakes.gif?v=1613444145762",
-  "order raspberry pudding": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FRaspberry%20pudding.gif?v=1613444145762",
-  "order pancakes": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FPancakes.gif?v=1613444145762",
-  "order hot cocoa": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FHot%20cocoa.gif?v=1613444146113",
-  "order bento": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FBento.gif?v=1613444145961",
-  "order calpico": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FCalpico%20White%20Peach.gif?v=1613502107432",
-  "order boba milk tea": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FPearl%20Milk%20Tea.gif?v=1613502114564",
-  "order banana milk": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FBanana%20milk.png?v=1613444145808",
-  "order bodily fluids": "https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FBodily%20fluids.gif?v=1613695791308",
-  "order mochi donut":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FMochi%20donut%20(Pon-de-Ring).gif?v=1614037926029",
-  "order sushi set":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FSushi%20set.gif?v=1614037926229",
-  "order supreme pizza":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FWhole%20supreme%20pizza.gif?v=1614037926427",
-  "order torchic egg on toast":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FTorchic%20egg%20on%20toast.gif?v=1614037926029",
-  "order pink lemonade":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FPink%20lemonade.gif?v=1614037926281",
-  "order pepperoni pizza slice":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FPepperoni%20pizza%20slice.gif?v=1614037926253",
-  "order matcha latte":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FMatcha%20latte%20with%20whipped%20cream.gif?v=1614037926064",
-  "order iced lemon tea for two":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FIced%20lemon%20tea%20for%20two.png?v=1614037926056",
-  "order iced lemon tea for 2":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FIced%20lemon%20tea%20for%20two.png?v=1614037926056",
-  "order donut":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FDonut.gif?v=1614037926029",
-  "order custard pudding":"https://cdn.glitch.com/1f3ad41e-6c0c-4160-902b-a50330e419bd%2FCustard%20pudding.gif?v=1614037926029",
+  "order coffee": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fcoffee.gif?v=1624959795212", 
+  "order latte": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Flatte.gif?v=1624959817760",
+  "order muffin": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fmuffin.gif?v=1624959828091",
+  "order strawberry cake roll": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fstrawberry%20cake%20roll.gif?v=1624959855685",
+  "order strawberry mousse slice": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fstrawberry%20mousse%20slice.gif?v=1624959858382",
+  "order shio ramen": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fshio%20ramen.gif?v=1624959852977",
+  "order rilakkuma pancake": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Frilakkuma%20pancakes.gif?v=1624959850431",
+  "order raspberry pudding": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fraspberry%20pudding.gif?v=1624959847280",
+  "order pancakes": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fpancakes.gif?v=1624959835311",
+  "order hot cocoa": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fhot%20cocoa.gif?v=1624959813096",
+  "order bento": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fbento.gif?v=1624959783793",
+  "order calpico": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fcalpico%20white%20peach.gif?v=1624959791098",
+  "order boba milk tea": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fpearl%20milk%20tea.gif?v=1624959838385",
+  "order banana milk": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fbanana%20milk.png?v=1624959781059",
+  "order bodily fluids": "https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fbodily%20fluids.gif?v=1624959788831",
+  "order mochi donut":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fmochi%20donut.gif?v=1624959823869",
+  "order sushi set":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fsushi%20set.gif?v=1624959860796",
+  "order supreme pizza":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fwhole%20supreme%20pizza.gif?v=1624959866563",
+  "order torchic egg on toast":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Ftorchic%20egg%20on%20toast.gif?v=1624959863682",
+  "order pink lemonade":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fpink%20lemonade.gif?v=1624959844232",
+  "order pepperoni pizza slice":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fpepperoni%20pizza%20slice.gif?v=1624959841430",
+  "order matcha latte":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fmatcha%20latte%20with%20whipped%20cream.gif?v=1624959821279",
+  "order iced lemon tea for two":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Ficed%20lemon%20tea%20for%20two.png?v=1624959815399",
+  "order iced lemon tea for 2":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Ficed%20lemon%20tea%20for%20two.png?v=1624959815399",
+  "order donut":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fdonut.gif?v=1624959799180",
+  "order custard pudding":"https://cdn.glitch.com/f95f67f6-548e-4abc-9ebf-38b5a58f2885%2Fcustard%20pudding.gif?v=1624959797130",
 };
 
 const REPLIES_LIST = [
